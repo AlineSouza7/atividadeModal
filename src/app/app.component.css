@@ -1,0 +1,48 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40vh;
+}
+
+app-modal {
+    margin-top: -20vh;
+    margin-left: -10vw;
+    background-color: pink;
+    height: 50vh;
+    width: 20vw;
+    border-radius: 3vh;
+    color: white;
+}
+
+.xizinho {
+    float: right;
+    margin-top: 1vh;
+    margin-right: 1vw;
+}
+.background {
+    background-color: black;
+    opacity: 50%;
+    z-index: -1;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.modal {
+    z-index: 1;
+    background-color: darkblue;
+}
+
+#outroModal {
+    z-index: 10;
+    position: absolute;
+    background-color: pink;
+    margin-left: -4vw;
+}
