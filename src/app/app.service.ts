@@ -9,7 +9,7 @@ export class AppService {
     }
 
     getTags(): Observable<{message: object}> {
-        return this.httpClient.get<{message: object}>('https://dog.ceo/api/breeds/image/random')
+        return this.httpClient.get<{message: object}>('https://randomfox.ca/floof/')
     }
 }
 

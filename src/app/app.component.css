@@ -3,16 +3,26 @@
     padding: 0px;
 }
 
-body {
+body { 
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 40vh;
+    background-image: url('/src/assets/background.png');
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/src/assets/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 app-modal {
-    margin-top: -20vh;
-    margin-left: -10vw;
+    position: absolute;
     background-color: pink;
     height: 50vh;
     width: 20vw;
@@ -20,11 +30,52 @@ app-modal {
     color: white;
 }
 
-.xizinho {
-    float: right;
-    margin-top: 1vh;
-    margin-right: 1vw;
+.abrir-modal {
+    width: 8vw;
+    height: 10vh;
+    border-radius: 1vh;
+    border: none;
+    background-color: #4E7AFF;
+    color: white;
+    font-family: cursive;
+    cursor: pointer;
 }
+
+.abrir-modal:hover {
+    background-color: #275cfa;
+}
+
+
+.xizinho {
+    position: absolute;
+    float: right;
+    margin-top: -16vh;
+    margin-left: 11vw;
+    width: 1.5vw;
+    background-color: #FA8932;
+    border: none;
+    border-radius: 1vh;
+    color: white;
+    font-family: cursive;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.xizinho1 {
+    position: absolute;
+    float: right;
+    margin-top: 0;
+    margin-left: 90%;
+    width: 1.5vw;
+    background-color: #FA8932;
+    border: none;
+    border-radius: 1vh;
+    color: white;
+    font-family: cursive;
+    cursor: pointer;
+    z-index: 100;
+}
+
 .background {
     background-color: black;
     opacity: 50%;
@@ -34,9 +85,12 @@ app-modal {
     height: 100vh;
 }
 
-
 .modal {
     z-index: 1;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: darkblue;
 }
 
@@ -44,5 +98,13 @@ app-modal {
     z-index: 10;
     position: absolute;
     background-color: pink;
-    margin-left: -4vw;
+}
+
+.input-modal {
+    z-index: 200;
+}
+
+img{
+    width: 100%;
+    height: 80%;
 }

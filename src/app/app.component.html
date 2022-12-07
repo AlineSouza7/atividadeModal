@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Modal</title>
 </head>
+
 <body>
-  <app-button texto="Abrir Modal" (click)="abrirModal()"></app-button>
+  <div class="wrapper">
+    <button class="abrir-modal" (click)="abrirModal()">Abrir Modal</button>
 
-  <ng-container *ngIf="aberto">
-    <app-modal class="modal">
-      <app-button class="xizinho" texto="X" botao (click)="abrirModal()"></app-button>
-      <p class="texto" texto>Escolha e se surpreenda!</p>
-      <app-button texto="Botão 1" value="1" (click)="abrirOutroModal()"></app-button>
-      <app-button texto="Botão 2" value="2" (click)="abrirOutroModal()"></app-button>
-      <app-button texto="Botão 3" value="3" (click)="abrirOutroModal()"></app-button>
-    </app-modal>
-    <ng-container *ngIf="outroAberto">
-      <app-modal id="outroModal">
-        <app-button class="xizinho" texto="X" botao (click)="abrirOutroModal()"></app-button>
+    <ng-container *ngIf="aberto">
+
+      <app-modal class="modal">
+        <button class="xizinho" botao (click)="abrirModal()">X</button>
+        <p class="texto" texto>Clique no Botão!</p>
+        <button class="abrir-modal" botao value="1" (click)="abrirOutroModal()">Abrir Outro Modal</button>
       </app-modal>
+
+      <ng-container *ngIf="outroAberto">
+        <app-modal id="outroModal">
+          <button class="xizinho1" botao (click)="abrirOutroModal()">X</button>
+          <button botao (click)="consultar(valor.value)">Confirmar</button>
+          <input class="input-modal" type="number" placeholder="Escolha" #valor>
+          <img class="imagem-modal" *ngIf="linkImage != null" src="{{linkImage}}">
+        </app-modal>
+      </ng-container>
+
+      <div class="background"></div>
     </ng-container>
-    <div class="background"></div>
-  </ng-container>
-
-
-  <input type="number" #valor>
-  <br>
-  <button (click)="consultar(valor.value)">confirmar</button>
-  <br>
-  <img [src]="linkImage">
-
+  </div>
 </body>
-</html>
 
+</html>

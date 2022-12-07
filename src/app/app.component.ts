@@ -39,6 +39,6 @@ export class AppComponent implements OnInit {
 
   consultar(valor) {
     console.log(this.selectedTag);
-    this.linkImage = 'https://dog.ceo/api/breeds/image/random' + valor;
+    this.linkImage = 'https:\/\/randomfox.ca\/images\/' + valor + '.jpg';
   }
 }
