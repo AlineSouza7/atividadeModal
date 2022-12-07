@@ -16,16 +16,31 @@
 
       <app-modal class="modal">
         <button class="xizinho" botao (click)="abrirModal()">X</button>
-        <p class="texto" texto>Clique no Botão!</p>
-        <button class="abrir-modal" botao value="1" (click)="abrirOutroModal()">Abrir Outro Modal</button>
+        <p class="texto" texto>Escolha um Botão!</p>
+        <div class="div-botoes">
+          <button class="abrir-modal" botao (click)="abrirOutroModal()">Raposas</button>
+          <button class="abrir-modal" botao2 (click)="abrirTerceiroModal()">Gatos</button>
+        </div>
       </app-modal>
 
       <ng-container *ngIf="outroAberto">
-        <app-modal id="outroModal">
+        <app-modal id="outroModal1">
           <button class="xizinho1" botao (click)="abrirOutroModal()">X</button>
-          <button botao (click)="consultar(valor.value)">Confirmar</button>
           <input class="input-modal" type="number" placeholder="Escolha" #valor>
+          <button class="botao-confirmar" botao (click)="consultar(valor.value)">Confirmar</button>
           <img class="imagem-modal" *ngIf="linkImage != null" src="{{linkImage}}">
+        </app-modal>
+      </ng-container>
+
+      <ng-container *ngIf="terceiroModal">
+        <app-modal id="outroModal2">
+          <button class="xizinho1" botao (click)="abrirTerceiroModal()">X</button>
+          <select class="select">
+            <option *ngFor="let tag of gatos">{{tag}}</option>
+          </select>
+          <input class="input-modal2" type="number" placeholder="Escolha" [(ngModel)]="numero">
+          <button class="botao-confirmar" botao (click)="consultarTerceiro()">Confirmar</button>
+          <img class="imagem-modal" *ngIf="linkImageTerceiro != null" src="{{linkImageTerceiro}}">
         </app-modal>
       </ng-container>
 

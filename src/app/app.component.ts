@@ -11,18 +11,25 @@ export class AppComponent implements OnInit {
 
   // variáveis para conseguir conectar à API
   tags: object;
-  selectedTag: string
+  selectedTag: string;
   linkImage: string;
+  linkImageTerceiro: string;
   statusCode: string;
+  numero: string;
+  gatos: string[] = []
 
-  constructor (private appService: AppService) {
+  constructor(private appService: AppService) {
   }
 
   ngOnInit(): void {
     this.appService.getTags()
       .subscribe(tags => {
         this.tags = tags.message
-        console.log(this.tags)
+      })
+
+    this.appService.getGatos()
+      .subscribe(gatos => {
+        this.gatos = gatos
       })
   }
 
@@ -40,5 +47,16 @@ export class AppComponent implements OnInit {
   consultar(valor) {
     console.log(this.selectedTag);
     this.linkImage = 'https:\/\/randomfox.ca\/images\/' + valor + '.jpg';
+  }
+
+  consultarTerceiro() {
+    console.log(this.selectedTag);
+    this.linkImageTerceiro = 'https://http.cat/' + Number(this.numero)
+  }
+
+  terceiroModal: boolean = false;
+
+  abrirTerceiroModal() {
+    this.terceiroModal = !this.terceiroModal;
   }
 }
